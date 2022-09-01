@@ -1,0 +1,23 @@
+package com.adenda.agenda.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.adenda.agenda.entities.Paciente;
+import com.adenda.agenda.repository.PacienteRepository;
+
+@RestController
+@RequestMapping(value = "/pacientes")
+public class PacienteController {
+
+	@Autowired
+	private PacienteRepository repos;
+	/*save*/
+	public Paciente save(Paciente pa) {
+		return repos.save(pa);
+	}
+	
+	
+	/*getAll*/
+}
