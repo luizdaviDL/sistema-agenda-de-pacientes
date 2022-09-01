@@ -1,0 +1,5 @@
+package com.adenda.agenda.paciente;
+
+public class Paciente {
+
+}
