@@ -1,5 +1,7 @@
 package com.adenda.agenda.dto;
 
+import java.util.List;
+
 import com.adenda.agenda.entities.Paciente;
 
 public class PacienteDto {
@@ -15,6 +17,10 @@ public class PacienteDto {
 		nome = pa.getNome();
 		sobrenome = pa.getSobrenome();
 		email = pa.getEmail();
+	}
+
+public PacienteDto(List<Paciente> pa) {
+		
 	}
 
 	public Long getId() {

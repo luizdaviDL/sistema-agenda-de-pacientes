@@ -1,21 +1,26 @@
 package com.adenda.agenda.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adenda.agenda.copia.PacienteCopia;
 import com.adenda.agenda.dto.PacienteDto;
 import com.adenda.agenda.entities.Paciente;
+import com.adenda.agenda.repository.PacienteRepository;
 import com.adenda.agenda.transform.Conversor;
 import com.adenda.agenda.transform.SalvarPaciente;
 
 @Service
 public class Pacienteservice {
 
-
 	
 	@Autowired
 	private SalvarPaciente salvar;
+	
+	@Autowired
+	private PacienteRepository repositorio;
 	
 	/*save*/
 	
@@ -27,4 +32,14 @@ public class Pacienteservice {
 		
 		
 	}
+	
+	/*getAll*/
+	public List<PacienteDto> findAll() {
+		List<Paciente> buscar = repositorio.findAll();
+		List<PacienteDto> dto = Conversor.lista(buscar);
+		return dto;
+	}
+		
+		
+	
 }
