@@ -54,8 +54,7 @@ public class Pacienteservice {
 	
 	public PacienteDto mudar(AlterarPaciente pa) {
 		Paciente paciente = repositorio.findById(pa.getId()).get();
-		Paciente transf = Conversor.alterar();/*TO Do*/
-		Paciente result = repositorio.save(transf);
+		Paciente result = repositorio.save(paciente);
 		PacienteDto dto = new PacienteDto(result);
 		return dto;
 	}

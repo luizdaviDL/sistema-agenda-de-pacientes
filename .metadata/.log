@@ -1516,3 +1516,27 @@ java.util.concurrent.TimeoutException
 	at org.eclipse.jface.text.contentassist.AsyncCompletionProposalPopup.lambda$9(AsyncCompletionProposalPopup.java:351)
 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2022-09-05 12:50:44.745
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): pegarId(Long)#2 [in Pacienteservice [in [Working copy] Pacienteservice.java [in com.adenda.agenda.service [in src/main/java [in agenda]]]]] does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:574)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:617)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:328)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:314)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:233)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:301)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:644)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:520)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:748)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:666)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:658)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.lambda$0(LSJavaHoverProvider.java:68)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2022-09-05 12:50:44.746
+!MESSAGE pegarId(Long)#2 [in Pacienteservice [in [Working copy] Pacienteservice.java [in com.adenda.agenda.service [in src/main/java [in agenda]]]]] does not exist
+
+!ENTRY org.eclipse.ui 2 2 2022-09-05 12:59:12.622
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)

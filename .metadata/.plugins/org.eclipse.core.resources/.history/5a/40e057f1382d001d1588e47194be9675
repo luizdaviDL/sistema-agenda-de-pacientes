@@ -3,7 +3,6 @@ package com.adenda.agenda.transform;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.adenda.agenda.copia.AlterarPaciente;
 import com.adenda.agenda.copia.PacienteCopia;
 import com.adenda.agenda.dto.PacienteDto;
 import com.adenda.agenda.entities.Paciente;
@@ -19,7 +18,7 @@ public class Conversor {
 		return resu;
 	}
 	
-	public static Paciente alterar (AlterarPaciente pa) {
+	public static Paciente alterar (PacienteCopia pa) {
 		Paciente resu = new Paciente();
 		resu.setNome(pa.getNome());
 		resu.setSobrenome(pa.getSobrenome());
