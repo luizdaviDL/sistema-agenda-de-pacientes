@@ -41,10 +41,8 @@ public class Pacienteservice {
 	}
 	
 	/*GetById*/
-	public PacienteDto pegarId(Long id) {
-		Paciente paciente = repositorio.findById(id).get();
-		PacienteDto dto = new PacienteDto(paciente);
-		return dto;
+	public PacienteDto pegarId(PacienteCopia pa) {
+		
 	}
 		
 		
