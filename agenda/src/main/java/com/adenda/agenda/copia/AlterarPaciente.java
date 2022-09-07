@@ -5,17 +5,24 @@ public class AlterarPaciente {
 	private Long id;
 	private String nome;
 	private String sobrenome;
+	private String cpf;
 	private String email;
+
+	
+
+	public AlterarPaciente() {
+	}
 	
 	
-	public AlterarPaciente(Long id, String nome, String sobrenome, String email) {
+	public AlterarPaciente(Long id, String nome, String sobrenome, String cpf, String email) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
+		this.cpf = cpf;
 		this.email = email;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -34,6 +41,13 @@ public class AlterarPaciente {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	
 	public String getEmail() {
 		return email;
@@ -41,6 +55,7 @@ public class AlterarPaciente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	
 	
 	

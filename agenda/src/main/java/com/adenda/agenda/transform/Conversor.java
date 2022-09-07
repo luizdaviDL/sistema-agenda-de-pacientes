@@ -21,11 +21,13 @@ public class Conversor {
 	
 	public static Paciente alterar (AlterarPaciente pa) {
 		Paciente resu = new Paciente();
+		resu.setId(pa.getId());
 		resu.setNome(pa.getNome());
 		resu.setSobrenome(pa.getSobrenome());
+		resu.setCpf(pa.getCpf());
 		resu.setEmail(pa.getEmail());
 		return resu;
-	}
+	} 
 	
 	public static List<PacienteDto> lista(List<Paciente> pa) {
 		
@@ -37,5 +39,6 @@ public class Conversor {
 		    });
 		 	 return dtos;
 	}
+
 	
 }
