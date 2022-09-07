@@ -2,11 +2,14 @@ package com.adenda.agenda.dto;
 
 import java.util.List;
 
+import javax.validation.constraints.NotBlank;
+
 import com.adenda.agenda.entities.Paciente;
 
 public class PacienteDto {
 	
 	private Long id;
+	@NotBlank(message = "Campo nome deve ser preenchido")
 	private String nome;
 	private String sobrenome;
 	private String email;

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.adenda.agenda.copia.AlterarPaciente;
 import com.adenda.agenda.copia.PacienteCopia;
 import com.adenda.agenda.dto.PacienteDto;
 import com.adenda.agenda.entities.Paciente;
@@ -51,16 +50,16 @@ public class Pacienteservice {
 	
 	/*UpDate*/
 	
-	
+	/*
 	public PacienteDto mudar(AlterarPaciente pa) {
 		Paciente paciente = repositorio.findById(pa.getId()).get();
-		Paciente transf = Conversor.alterar();/*TO Do*/
+		Paciente transf = Conversor.alterar();
 		Paciente result = repositorio.save(transf);
 		PacienteDto dto = new PacienteDto(result);
 		return dto;
 	}
 	
-		
+		*/
 		
 	
 }

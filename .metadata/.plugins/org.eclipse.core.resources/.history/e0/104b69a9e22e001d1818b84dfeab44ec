@@ -1,0 +1,66 @@
+package com.adenda.agenda.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.adenda.agenda.copia.AlterarPaciente;
+import com.adenda.agenda.copia.PacienteCopia;
+import com.adenda.agenda.dto.PacienteDto;
+import com.adenda.agenda.entities.Paciente;
+import com.adenda.agenda.repository.PacienteRepository;
+import com.adenda.agenda.transform.Conversor;
+import com.adenda.agenda.transform.SalvarPaciente;
+
+@Service
+public class Pacienteservice {
+
+	
+	@Autowired
+	private SalvarPaciente salvar;
+	
+	@Autowired
+	private PacienteRepository repositorio;
+	
+	/*save*/
+	
+	public PacienteDto save(PacienteCopia pa) {
+		Paciente transf = Conversor.trans(pa);
+		Paciente result = salvar.save(transf);
+		PacienteDto dto = new PacienteDto(result);
+		return dto;
+		
+		
+	}
+	
+	/*getAll*/
+	public List<PacienteDto> findAll() {
+		List<Paciente> buscar = repositorio.findAll();
+		List<PacienteDto> dto = Conversor.lista(buscar);
+		return dto;
+	}
+	
+	/*GetById*/
+	public PacienteDto pegarId(Long id) {
+		Paciente paciente = repositorio.findById(id).get();
+		PacienteDto dto = new PacienteDto(paciente);
+		return dto;
+	}
+	
+	
+	/*UpDate*/
+	
+	/*
+	public PacienteDto mudar(AlterarPaciente pa) {
+		Paciente paciente = repositorio.findById(pa.getId()).get();
+		Paciente transf = Conversor.alterar();
+		Paciente result = repositorio.save(transf);
+		PacienteDto dto = new PacienteDto(result);
+		return dto;
+	}
+	
+		*/
+		
+	
+}
