@@ -1,0 +1,5 @@
+package com.adenda.agenda.repository;
+
+public interface AgendaRepository {
+
+}

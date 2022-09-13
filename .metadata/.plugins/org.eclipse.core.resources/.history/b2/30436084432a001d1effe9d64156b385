@@ -1,9 +1,0 @@
-package com.adenda.agenda.service;
-
-@Service
-public class Service {
-
-	/*save*/
-	
-	public 
-}

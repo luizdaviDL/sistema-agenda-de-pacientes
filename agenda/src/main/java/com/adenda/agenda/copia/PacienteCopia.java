@@ -1,9 +1,14 @@
 package com.adenda.agenda.copia;
 
+import javax.validation.constraints.NotBlank;
+
 public class PacienteCopia {
 
+	@NotBlank(message="campo nome não pode ser vazio")
 	private String nome;
+	@NotBlank(message="campo sobrenome não pode ser vazio")
 	private String sobrenome;
+	@NotBlank(message="campo cpf não pode ser vazio")
 	private String cpf;
 	private String email;
 	

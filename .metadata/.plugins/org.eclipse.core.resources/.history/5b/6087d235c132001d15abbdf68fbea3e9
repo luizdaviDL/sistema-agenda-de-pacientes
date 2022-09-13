@@ -1,0 +1,24 @@
+package com.adenda.agenda.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.adenda.agenda.copia.AgendaCopia;
+import com.adenda.agenda.dto.AgendaDto;
+import com.adenda.agenda.repository.AgendaRepository;
+
+public class AgendaController {
+	
+	@Autowired
+	private AgendaRepository service;
+	/*Save*/
+	
+	public AgendaDto save(AgendaCopia pa) {
+		
+	}
+	
+	/*get*/
+
+	public AgendaDto findAll() {
+
+	} 
+}

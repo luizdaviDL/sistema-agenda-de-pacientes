@@ -1,0 +1,54 @@
+package com.adenda.agenda.copia;
+
+import java.time.LocalDateTime;
+
+
+public class AgendaCopia {
+	
+	private Long pacienteId;
+	private String descricao;
+	private LocalDateTime data;
+	private LocalDateTime dataCriacao;
+	
+	
+	public AgendaCopia() {
+		super();
+	}
+	
+	
+	public AgendaCopia(Long pacienteId, String descricao, LocalDateTime data, LocalDateTime dataCriacao) {
+		this.pacienteId = pacienteId;
+		this.descricao = descricao;
+		this.data = data;
+		this.dataCriacao = dataCriacao;
+	}
+
+
+	public Long getPacienteId() {
+		return pacienteId;
+	}
+	public void setPacienteId(Long pacienteId) {
+		this.pacienteId = pacienteId;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public LocalDateTime getData() {
+		return data;
+	}
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+	public LocalDateTime getDataCriacao() {
+		return dataCriacao;
+	}
+	public void setDataCriacao(LocalDateTime dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+	
+	
+
+}

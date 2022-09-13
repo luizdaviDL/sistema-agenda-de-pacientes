@@ -1,0 +1,65 @@
+package com.adenda.agenda.copia;
+
+import java.time.LocalDateTime;
+
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Null;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+
+public class AgendaCopia {
+	@Null(message="campo paciente não pode ser vázio")
+	private Long pacienteId;
+	@NotBlank(message="campo descrição não pode ser vázio")
+	private String descricao;
+	@NotBlank(message="a data do agendamento não pode ser vázio")
+	@Future
+	@DateTimeFormat(pattern="DD-MM-yyyyTHH:mm")
+	private LocalDateTime data;
+	@DateTimeFormat(pattern="DD-MM-yyTHH:mm:ss")
+	private LocalDateTime dataCriacao;
+	
+	
+	public AgendaCopia() {
+		super();
+	}
+	
+	
+	public AgendaCopia(Long pacienteId, String descricao, LocalDateTime data, LocalDateTime dataCriacao) {
+		this.pacienteId = pacienteId;
+		this.descricao = descricao;
+		this.data = data;
+		this.dataCriacao = dataCriacao;
+	}
+
+
+	public Long getPacienteId() {
+		return pacienteId;
+	}
+	public void setPacienteId(Long pacienteId) {
+		this.pacienteId = pacienteId;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public LocalDateTime getData() {
+		return data;
+	}
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+	public LocalDateTime getDataCriacao() {
+		return dataCriacao;
+	}
+	public void setDataCriacao(LocalDateTime dataCriacao) {
+		this.dataCriacao = dataCriacao;
+	}
+	
+	
+
+}

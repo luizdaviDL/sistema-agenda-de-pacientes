@@ -1,0 +1,27 @@
+package com.adenda.agenda.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.adenda.agenda.copia.AgendaCopia;
+import com.adenda.agenda.dto.AgendaDto;
+import com.adenda.agenda.repository.AgendaRepository;
+
+public class AgendaController {
+	
+	@Autowired
+	private AgendaService service;
+	/*Save*/
+	
+	public ResponseEntity<AgendaDto> save(AgendaCopia pa) {
+		AgendaDto agenda = service.save(pa);
+		return ResponseEntity.status(HttpStatus.CREATED).body(agenda);
+	}
+	
+	/*get*/
+
+	public AgendaDto findAll() {
+
+	} 
+}

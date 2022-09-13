@@ -3,30 +3,31 @@ package com.adenda.agenda.transform;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.adenda.agenda.copia.AgendaCopia;
 import com.adenda.agenda.copia.AlterarPaciente;
 import com.adenda.agenda.copia.PacienteCopia;
+import com.adenda.agenda.dto.AgendaDto;
 import com.adenda.agenda.dto.PacienteDto;
+import com.adenda.agenda.entities.Agenda;
 import com.adenda.agenda.entities.Paciente;
 
+@Component
 public class Conversor {
+	
+	@Autowired
+	private ModelMapper mapper;
 
-	public static Paciente trans (PacienteCopia pa) {
-		Paciente resu = new Paciente();
-		resu.setNome(pa.getNome());
-		resu.setSobrenome(pa.getSobrenome());
-		resu.setCpf(pa.getCpf());
-		resu.setEmail(pa.getEmail());
-		return resu;
+	public  Paciente trans (PacienteCopia pa) {
+		return mapper.map(pa, Paciente.class);
 	}
 	
-	public static Paciente alterar (AlterarPaciente pa) {
-		Paciente resu = new Paciente();
-		resu.setId(pa.getId());
-		resu.setNome(pa.getNome());
-		resu.setSobrenome(pa.getSobrenome());
-		resu.setCpf(pa.getCpf());
-		resu.setEmail(pa.getEmail());
-		return resu;
+	public  Paciente alterar (AlterarPaciente pa) {
+		return mapper.map(pa, Paciente.class);
+		
 	} 
 	
 	public static List<PacienteDto> lista(List<Paciente> pa) {
@@ -39,6 +40,19 @@ public class Conversor {
 		    });
 		 	 return dtos;
 	}
+	
+	
+	//******************* Agenda ************************
+	
+	public Agenda alterarAgenda(AgendaCopia agenda) {
+		return mapper.map(agenda, Agenda.class);
+	}
+	
+	public AgendaDto dtoAgenda(Agenda agenda) {
+		return mapper.map(agenda, AgendaDto.class);
+	}
+	
+	
 
 	
 }

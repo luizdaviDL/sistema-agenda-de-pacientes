@@ -1,0 +1,43 @@
+package com.adenda.agenda.dto;
+
+public class AgendaDto {
+
+	private Long id;
+	private String descricao;
+	private PacienteDto paciente;
+	
+	
+	public AgendaDto() {
+		super();
+	}
+	
+	
+	public AgendaDto(Long id, String descricao, PacienteDto paciente) {
+		this.id = id;
+		this.descricao = descricao;
+		this.paciente = paciente;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public PacienteDto getPaciente() {
+		return paciente;
+	}
+	public void setPaciente(PacienteDto paciente) {
+		this.paciente = paciente;
+	}
+	
+	
+	
+}

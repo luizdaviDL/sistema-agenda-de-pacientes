@@ -17,6 +17,8 @@ import com.adenda.agenda.transform.SalvarPaciente;
 @Service
 public class Pacienteservice {
 
+	@Autowired
+	private Conversor mapper;
 	
 	@Autowired
 	private SalvarPaciente salvar;
@@ -27,7 +29,7 @@ public class Pacienteservice {
 	/*save*/
 	
 	public PacienteDto save(PacienteCopia pa) {
-		Paciente transf = Conversor.trans(pa);
+		Paciente transf = mapper.trans(pa);
 		Paciente result = salvar.save(transf);
 		PacienteDto dto = new PacienteDto(result);
 		return dto;
@@ -54,7 +56,7 @@ public class Pacienteservice {
 	
 	
 	public PacienteDto mudar(AlterarPaciente pa) {
-		Paciente transf = Conversor.alterar(pa);
+		Paciente transf = mapper.alterar(pa);
 		Paciente paciente = repositorio.findById(transf.getId()).get();
 	
 		if(paciente.getId().equals(null)) {

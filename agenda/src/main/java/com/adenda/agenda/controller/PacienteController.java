@@ -55,7 +55,7 @@ public class PacienteController {
 	/*Updata*/
 	
 	@PutMapping
-	public ResponseEntity<PacienteDto> modificar( @RequestBody AlterarPaciente pa) {
+	public ResponseEntity<PacienteDto> modificar(@RequestBody AlterarPaciente pa) {
 		PacienteDto serv = service.mudar( pa);
 		return ResponseEntity.ok().body(serv);
 	}

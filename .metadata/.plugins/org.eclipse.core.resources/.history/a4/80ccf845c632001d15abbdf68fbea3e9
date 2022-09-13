@@ -1,0 +1,56 @@
+package com.adenda.agenda.transform;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.adenda.agenda.copia.AgendaCopia;
+import com.adenda.agenda.copia.AlterarPaciente;
+import com.adenda.agenda.copia.PacienteCopia;
+import com.adenda.agenda.dto.PacienteDto;
+import com.adenda.agenda.entities.Agenda;
+import com.adenda.agenda.entities.Paciente;
+
+public class Conversor {
+	
+	@Autowired
+	private ModelMapper mapper;
+
+	public  Paciente trans (PacienteCopia pa) {
+		return mapper.map(pa, Paciente.class);
+	}
+	
+	public static Paciente alterar (AlterarPaciente pa) {
+		Paciente resu = new Paciente();
+		resu.setId(pa.getId());
+		resu.setNome(pa.getNome());
+		resu.setSobrenome(pa.getSobrenome());
+		resu.setCpf(pa.getCpf());
+		resu.setEmail(pa.getEmail());
+		return resu;
+	} 
+	
+	public static List<PacienteDto> lista(List<Paciente> pa) {
+		
+		List<PacienteDto> dtos = new ArrayList<>();
+		
+		 	pa.stream().forEach(topico -> {
+		 		PacienteDto dto = new PacienteDto(topico);
+		        dtos.add(dto);
+		    });
+		 	 return dtos;
+	}
+	
+	
+	//******************* Agenda ************************
+	
+	public Agenda alterar(AgendaCopia agenda) {
+		return mapper.map(agenda, Agenda.class);
+	}
+	
+	
+
+	
+}

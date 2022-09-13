@@ -1,0 +1,26 @@
+package com.adenda.agenda.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.adenda.agenda.copia.AgendaCopia;
+import com.adenda.agenda.dto.AgendaDto;
+import com.adenda.agenda.repository.AgendaRepository;
+
+@Service
+public class AgendaService {
+
+	@Autowired
+	private AgendaRepository repository;
+	
+	
+
+	public AgendaDto save(AgendaCopia pa) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+	/*getAll*/
+}

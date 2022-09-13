@@ -16,15 +16,15 @@ public class Agenda {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
+	private String descricao;
 	private LocalDateTime data;
 	private LocalDateTime dataCriacao;
 	@ManyToOne
 	private Paciente paciente;
 	
-	public Agenda(Long id, String nome, LocalDateTime data, LocalDateTime dataCriacao, Paciente paciente) {
+	public Agenda(Long id, String descricao, LocalDateTime data, LocalDateTime dataCriacao, Paciente paciente) {
 		this.id = id;
-		this.nome = nome;
+		this.descricao = descricao;
 		this.data = data;
 		this.dataCriacao = dataCriacao;
 		this.paciente = paciente;
@@ -43,12 +43,12 @@ public class Agenda {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public LocalDateTime getData() {
@@ -73,6 +73,11 @@ public class Agenda {
 
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
+	}
+
+	public void setPaciente(Agenda agenda) {
+		
+		
 	}
 	
 	

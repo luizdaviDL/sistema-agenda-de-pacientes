@@ -1,0 +1,15 @@
+package com.adenda.agenda.dto;
+
+import java.time.LocalDateTime;
+
+public class AgendaDto {
+
+	private Long id;
+	private PacienteDto paciente;
+	private String descricao;
+	private LocalDateTime data;
+	
+	
+	
+	
+}

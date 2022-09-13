@@ -1,0 +1,19 @@
+package com.adenda.agenda.controller;
+
+import com.adenda.agenda.copia.AgendaCopia;
+import com.adenda.agenda.dto.AgendaDto;
+
+public class AgendaController {
+	
+	/*Save*/
+	
+	public AgendaDto save(AgendaCopia pa) {
+		return 
+	}
+	
+	/*get*/
+
+	public AgendaDto findAll() {
+
+	}
+}

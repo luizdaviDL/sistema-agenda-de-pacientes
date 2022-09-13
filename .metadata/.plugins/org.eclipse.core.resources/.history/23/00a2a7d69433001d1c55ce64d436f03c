@@ -1,0 +1,62 @@
+package com.adenda.agenda.service;
+
+import java.time.LocalDateTime;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.adenda.agenda.copia.AgendaCopia;
+import com.adenda.agenda.dto.AgendaDto;
+import com.adenda.agenda.entities.Agenda;
+import com.adenda.agenda.exception.BusinessExceptio;
+import com.adenda.agenda.repository.AgendaRepository;
+import com.adenda.agenda.transform.Conversor;
+
+@Service
+public class AgendaService {
+	
+	@Autowired
+	private Conversor mapper;
+
+	@Autowired
+	private AgendaRepository repository;
+	
+	
+	
+	/*save*/
+
+
+	public AgendaDto save(AgendaCopia pa) {
+		/*if paciente exist*/
+		Agenda agenda = mapper.alterarAgenda(pa);
+		
+		Optional<Agenda> paciente = repository.findById(agenda.getPaciente().getId());
+	
+		
+		if(paciente.isEmpty()) {
+			throw new BusinessExceptio("Paciente não encontrado");
+		}
+		
+		/*ver se tem outro horario com o mesmo horario*/
+		
+		Optional<Agenda> horario = repository.findByHorario(agenda.getData()));
+		
+		
+		if(horario.isPresent()) {
+			throw new BusinessExceptio("Já existe outra consulta para este horario");
+		}
+		
+		agenda.setPaciente(paciente.get());
+		agenda.setDataCriacao(LocalDateTime.now());
+		
+		Agenda salvo = repository.save(agenda);
+		AgendaDto dto = mapper.dtoAgenda(salvo);
+		return dto;
+		
+	}
+	
+	
+	
+	/*getAll*/
+}

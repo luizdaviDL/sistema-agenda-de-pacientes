@@ -1,0 +1,12 @@
+package com.adenda.agenda.copia;
+
+import java.time.LocalDateTime;
+
+
+public class AgendaCopia {
+
+	private String descricao;
+	private LocalDateTime data;
+	private LocalDateTime dataCriacao;
+	private Long pacienteId;
+}
